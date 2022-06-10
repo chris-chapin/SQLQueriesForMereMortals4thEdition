@@ -1,12 +1,10 @@
 -- "Display matches with no game data."
-
 SELECT Tourney_Matches.MatchID
 FROM Tourney_Matches
 LEFT OUTER JOIN Match_Games ON Tourney_Matches.MatchID = Match_Games.MatchID
 WHERE Match_Games.MatchID is NULL
 
 -- "Display all tournaments and any matches that have been played."
-
 SELECT Tournaments.TourneyID, PlayedMatches.TourneyMatches, PlayedMatches.GameMatches
 FROM Tournaments
 LEFT OUTER JOIN (

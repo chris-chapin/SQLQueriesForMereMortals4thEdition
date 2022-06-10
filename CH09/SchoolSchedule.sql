@@ -1,5 +1,4 @@
 -- "Show me classes that have no students enrolled."
-
 SELECT DISTINCT Classes.ClassID, Subjects.SubjectName
 FROM (Classes
 	LEFT OUTER JOIN (
@@ -17,7 +16,6 @@ LEFT OUTER JOIN Faculty_Subjects ON Faculty_Subjects.SubjectID = Subjects.Subjec
 WHERE Faculty_Subjects.StaffID is NULL
 
 -- "List students not currently enrolled in any classes."
-
 SELECT (Students.StudFirstName + ' ' + Students.StudLastName) AS StudentName
 FROM Students
 LEFT OUTER JOIN (

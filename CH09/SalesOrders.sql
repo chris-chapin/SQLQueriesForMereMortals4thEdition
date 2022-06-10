@@ -1,5 +1,4 @@
 -- "Show me customers who have never ordered a helmet."
-
 SELECT (Customers.CustFirstName + ' ' + Customers.CustLastName) AS Customer
 FROM Customers
 LEFT OUTER JOIN (
@@ -12,14 +11,12 @@ ON HelmetOrders.CustomerID = Customers.CustomerID
 WHERE HelmetOrders.ProductName is NULL
 
 -- "Display customers who have no sales rep in the same ZIP Code."
-
 SELECT (Customers.CustFirstName + ' ' + Customers.CustLastName) AS Customer
 FROM Customers
 LEFT OUTER JOIN Employees ON Employees.EmpZipCode = Customers.CustZipCode
 WHERE Employees.EmpZipCode is NULL
 
 -- "List all products and the dates for any orders."
-
 SELECT ProductName, OrdersDetails.OrderDate
 FROM Products
 LEFT OUTER JOIN (
